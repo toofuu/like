@@ -10,11 +10,17 @@ This small little function makes code easier to reason about for me. It's called
 It checks the *shape* of things. 
 
 (like [] [1 :keyword '()]) => true
+
 (like [1] [1 2 3]) => true
+
 (like [:keyword] [1 2 3]) => false
+
 (like [{:name "someone" :address "somewhere"}] [{:name "me" :address "here"} {:name "you" :address "there"}]) => true
+
 (like {:name "someone" :address "somewhere"} {:name "me"}) => false
+
 (like #{1} [1]) => false
+
 
 You can use it as pre- or postcondition, so the similarity of in/output is succinctly documented and checked automatically.
 And you do not have to use it everywhere, only where you feel it helps you understand the code better.
