@@ -26,6 +26,15 @@ It checks the *shape* of things.
 You can use it as pre- or postcondition, so the similarity of in/output is succinctly documented and checked automatically.
 And you do not have to use it everywhere, only where you feel it helps you understand the code better.
 
-```clojure (fn parse-int [str] ...)``` needs no type or unit-test to be understood.
+```clojure
+(fn parse-int [str] ...)
+```
+needs no type or unit-test to be understood.
 
-```clojure (fn parse-appointment [str] ...)``` is better understood when it has ```clojure {:post [(like {:id (UUID.) :name "me" :date (java.util.Date .)} %)]}```
+```clojure
+(fn parse-appointment [str] ...)
+```
+is better understood when it has
+```clojure
+{:post [(like {:id (UUID.) :name "me" :date (java.util.Date .)} %)]}
+```
