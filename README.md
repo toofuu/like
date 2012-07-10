@@ -16,7 +16,7 @@ It checks the *shape* of things.
 
 (like [:keyword] [1 2 3]) => false
 
-(like [{:name "someone" :address "somewhere"}] [{:name "me" :address "here"} {:name "you" :address "there"}]) => true
+(like [{:name "" :address ""}] [{:name "me" :address "here"} {:name "you" :address "there"}]) => true
 
 (like {:name "someone" :address "somewhere"} {:name "me"}) => false
 
