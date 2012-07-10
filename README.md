@@ -9,6 +9,7 @@ Wouldn't it be nice to have *verifiable* documention of what data a function nee
 This small little function makes code easier to reason about for me. It's called *like*.
 It checks the *shape* of things. 
 
+```clojure
 (like [] [1 :keyword '()]) => true
 
 (like [1] [1 2 3]) => true
@@ -20,11 +21,11 @@ It checks the *shape* of things.
 (like {:name "someone" :address "somewhere"} {:name "me"}) => false
 
 (like #{1} [1]) => false
-
+```
 
 You can use it as pre- or postcondition, so the similarity of in/output is succinctly documented and checked automatically.
 And you do not have to use it everywhere, only where you feel it helps you understand the code better.
 
-(fn parse-int [str] ...) needs no type or unit-test to be understood.
+```clojure (fn parse-int [str] ...)``` needs no type or unit-test to be understood.
 
-(fn parse-appointment [str] ...) is better understood when it has {:post [(like {:id (UUID.) :name "me" :date (java.util.Date .)} %)]}
+```clojure (fn parse-appointment [str] ...)``` is better understood when it has ```clojure {:post [(like {:id (UUID.) :name "me" :date (java.util.Date .)} %)]}```
